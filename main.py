@@ -5,9 +5,7 @@ import easyocr
 
 # paths de las imgs
 img_path="D:\\demmi\\Documents\\CODING_VSCODE\\CODING_SCHOOL\\Python\\Works\\Act1_Filtrado_img\\herramientascomputacionales\\placa_q.jpg"
-
 img2_path="D:\\demmi\\Documents\\CODING_VSCODE\\CODING_SCHOOL\\Python\\Works\\Act1_Filtrado_img\\herramientascomputacionales\\placa_2.jpg"
-
 img3_path="D:\\demmi\\Documents\\CODING_VSCODE\\CODING_SCHOOL\\Python\\Works\\Act1_Filtrado_img\\herramientascomputacionales\\placa_3.jpg"
 
 # Inicializar el lecto de EasyOCR
@@ -24,7 +22,7 @@ def process_image(image_path, threshold_value, blur_value):
     Return:
         img original, imagen umbralizada, imagen filtrada.
     '''
-    img = cv.imread(image_path, cv.IMREAD.GRAYSCALE)
+    img = cv.imread(image_path, 0)
     _, thresh = cv.threshold(img, threshold_value, 255, cv.THRESH_BINARY_INV)
     gauss = cv.medianBlur(thresh, blur_value)
     return img, thresh, gauss
@@ -61,6 +59,6 @@ def detect_text(image, placa):
 
 # Procesar y mostrar resultados para cada placa
 for idx, (path, threshold) in enumerate([(img_path, 50), (img2_path, 70), (img3_path, 110)], start=1):
-    img, thresh, gauss = process_image(path, threshold)
+    img, thresh, gauss = process_image(path, threshold, 15)
     display([img, thresh, gauss], ["Original", "Umbral", "Gauss"])
     detect_text(gauss, f"Placa {idx}")
