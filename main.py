@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 import easyocr
 
 # paths de las imgs
-img_path="D:\\demmi\\Documents\\CODING_VSCODE\\CODING_SCHOOL\\Python\\Works\\Act1_Filtrado_img\\placa_q.jpg"
+img_path="D:\\demmi\\Documents\\CODING_VSCODE\\CODING_SCHOOL\\Python\\Works\\Act1_Filtrado_img\\herramientascomputacionales\\placa_q.jpg"
 
-img2_path="D:\\demmi\\Documents\\CODING_VSCODE\\CODING_SCHOOL\\Python\\Works\\Act1_Filtrado_img\\placa_2.jpg"
+img2_path="D:\\demmi\\Documents\\CODING_VSCODE\\CODING_SCHOOL\\Python\\Works\\Act1_Filtrado_img\\herramientascomputacionales\\placa_2.jpg"
 
-img3_path="D:\\demmi\\Documents\\CODING_VSCODE\\CODING_SCHOOL\\Python\\Works\\Act1_Filtrado_img\\placa_3.jpg"
+img3_path="D:\\demmi\\Documents\\CODING_VSCODE\\CODING_SCHOOL\\Python\\Works\\Act1_Filtrado_img\\herramientascomputacionales\\placa_3.jpg"
 
 reader = easyocr.Reader(['en'], gpu=False)
 
