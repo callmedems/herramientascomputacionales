@@ -57,7 +57,7 @@ def detect_text(image, placa):
     for detection in result:
         print(detection[1])
 
-# Procesar y mostrar resultados para cada placa
+# Procesar y mostrar resultados para cada placa, ajustando el umbral y el filtro gaussiano según sea necesario
 for idx, (path, threshold) in enumerate([(img_path, 50), (img2_path, 70), (img3_path, 110)], start=1):
     img, thresh, gauss = process_image(path, threshold, 15)
     display([img, thresh, gauss], ["Original", "Umbral", "Gauss"])
